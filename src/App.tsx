@@ -4,11 +4,12 @@ import { Context} from './Contexts/Context'
 import { useState } from 'react'
 import AppRoutes from './routes/AppRoutes'
 import type { Product } from './types/prodects'
+import FooterSection from './components/Footer/FooterSection'
 
 
 
 function App() {
-  //=====================Storage Data==================  
+  //=====================States + Storage Data==================  
   const [favorite, setFavorite] = useState<Product[]>(() => {
     const storedFav = localStorage.getItem("favoriteItems");
     return storedFav ? JSON.parse(storedFav) : [];
@@ -19,12 +20,19 @@ function App() {
     return storedCart ? JSON.parse(storedCart) : [];
   });
 
+  //=====================Login State==================
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(() =>{
+    const storedLogin = localStorage.getItem("isLoggedIn");
+    return storedLogin ? JSON.parse(storedLogin) : false;
+  });
+  
   return (
     <>
       <div className="w-full font-semibold h-screen bg-background">
-        <Context.Provider value={{ favorite, setFavorite , cart , setCart}}>
+        <Context.Provider value={{ favorite, setFavorite , cart , setCart , isLoggedIn, setIsLoggedIn}}>
           <NavBar />
           <AppRoutes />
+          <FooterSection />
         </Context.Provider>
       </div>
     </>

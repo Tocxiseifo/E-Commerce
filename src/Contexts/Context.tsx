@@ -6,6 +6,8 @@ export interface ShopContextType {
   setFavorite: React.Dispatch<React.SetStateAction<Product[]>>;
   cart: Product[];
   setCart: React.Dispatch<React.SetStateAction<Product[]>>;
+  isLoggedIn: boolean;
+  setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const Context = createContext<ShopContextType | null>(null);

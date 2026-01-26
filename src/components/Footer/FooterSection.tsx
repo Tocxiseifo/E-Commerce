@@ -57,7 +57,7 @@ export default function FooterSection() {
                             <p className="text-sm text-gray-400 mb-4">Subscribe for exclusive offers</p>
                             <div className="flex ">
                                 <input type="email" placeholder="Enter Your Email" className="flex-1 px-4 py-2 lg:px-3 rounded-l-md bg-white text-gray-800 text-sm focus:outline-none" />
-                                <button className="bg-[#2563eb] px-4 py-2 lg:px-3 lg:mr-4 rounded-r-md hover:bg-blue-700 transition cursor-pointer"><ArrowForwardIcon /></button>
+                                <button className="bg-main px-4 py-2 lg:px-3 lg:mr-4 rounded-r-md hover:bg-yellow-600 transition cursor-pointer"><ArrowForwardIcon /></button>
                             </div>
                         </div>          
                     </div>

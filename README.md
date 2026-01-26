@@ -77,3 +77,25 @@ export default defineConfig([
 ])
 ```
 >>>>>>> ec02d06 (Finish the Home page)
+# Shoply – E‑Commerce React Project
+A modern e‑commerce frontend built with React, TypeScript, Tailwind CSS, and localStorage persistence for Cart & Favorites.
+
+## Features
+- Product listing
+- Add to Cart
+- Save Favorites
+- Persistent storage (localStorage)
+- Responsive layout
+
+## Technologies
+- React v18
+- TypeScript
+- Tailwind CSS
+- Vite
+- Axios
+- FakeStore API
+
+## Run Locally
+1. git clone …
+2. npm install
+3. npm run dev

@@ -8,10 +8,15 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 
 //=====================Types============
 import type { Product } from "../../types/prodects";
+import { Link, useParams } from "react-router-dom";
 
 export default function ProductCard() {
     const {products, loading, error , products3} = useProducts() //Custom hook contain the data of the api
     const {favorite, setFavorite , cart , setCart} = useShop() //custom hook contain the context data
+    const {productId}  = useParams()
+
+    
+    console.log(productId);
     
     if (loading) return <h1>Loading...</h1>
     if (error) return <h1>{error}</h1>
@@ -49,7 +54,7 @@ export default function ProductCard() {
                     return(
                             <div key={product.id} className="flex  flex-col mb-6   h-150 w-60 text-left group  mt-40 ">
                                 <div className="items-center hover:shadow-lg hover:-translate-y-1 duration-500 transition hover:duration-500   gap-2 bg-gray-50 h-70 w-65 flex mb-3 rounded-md justify-center cursor-pointer relative ">
-                                    <img src={product.image} alt={product.title} className="w-45 h-45 object-contain  duration-500 transition-all hover:scale-110 hover:duration-500" />
+                                    <img src={product.image} alt={product.title} loading="lazy" className="w-45 h-45 object-contain  duration-500 transition-all hover:scale-110 hover:duration-500" />
                                     <button onClick={(e) =>{
                                         e.stopPropagation()
                                         handleAddClick(product.id)
@@ -69,7 +74,8 @@ export default function ProductCard() {
                                 <div className="flex gap-4 mt-7">
                                     <button className="text-main border border-main bg-transparent w-25 h-10 rounded-md hover:bg-gray-100 duration-500 transition hover:duration-500 cursor-pointer" onClick={(e) => {e.stopPropagation() 
                                         handleAddToCart(product.id)}}>Add to cart</button>
-                                    <button className="bg-main w-25 h-10 rounded-md hover:bg-yellow-600 duration-500 transition hover:duration-500 cursor-pointer">View</button>
+                                    <Link to={`/product/${product.id}`} className="bg-main text-center flex justify-center items-center  w-25 h-10 rounded-md hover:bg-yellow-600 duration-500 transition hover:duration-500 cursor-pointer">View</Link> 
+                                    {/* link to product details page */}
                                 </div>
                             </div>
                     )
