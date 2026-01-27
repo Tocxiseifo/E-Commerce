@@ -20,6 +20,7 @@ function App() {
     return storedCart ? JSON.parse(storedCart) : [];
   });
 
+  const [quantity , setQuantity] = useState<number>(1);
   //=====================Login State==================
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(() =>{
     const storedLogin = localStorage.getItem("isLoggedIn");
@@ -29,7 +30,7 @@ function App() {
   return (
     <>
       <div className="w-full font-semibold h-full bg-background">
-        <Context.Provider value={{ favorite, setFavorite , cart , setCart , isLoggedIn, setIsLoggedIn}}>
+        <Context.Provider value={{ favorite, setFavorite , cart , setCart , isLoggedIn, setIsLoggedIn , quantity , setQuantity}}>
           <NavBar />
           <AppRoutes />
           <FooterSection />

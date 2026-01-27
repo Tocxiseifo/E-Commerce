@@ -47,7 +47,7 @@ export default function ProductCard() {
     }
 
     return(
-        <div className="w-full h-144 bg-white justify-center mt-50 ">
+        <div className="w-full h-210 bg-white justify-center mt-120 ">
                 <div className="flex flex-col items-center  mt-10">
                     <h1 className="text-3xl font-bold text-text-color">Most Popular Products</h1>
                     <p className="text-subtitles">Discover our most popular products</p>
