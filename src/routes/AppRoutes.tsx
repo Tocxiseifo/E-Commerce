@@ -4,8 +4,9 @@ import { Routes, Route } from "react-router-dom";
 // ====================Components===================
 import Home from "../pages/Home";
 import ErrorPage from "../pages/ErrorPage";
-import ProductSection from "../components/Products Section/ProductSection";
 import  LogIn from "../pages/Login Page/LogIn";
+import ProductDetails from "../pages/Product Details Page/ProductDetails";
+import CartPage from "../pages/Cart Page/CartPage";
 
 export default function AppRoutes() {
 
@@ -15,8 +16,9 @@ export default function AppRoutes() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="*" element={<ErrorPage />} />
-                <Route path="product/:productId" element={<ProductSection />} />
+                <Route path="product/:productId" element={<ProductDetails />} />
                 <Route path="Login" element={<LogIn />} />
+                <Route path="Cart" element={<CartPage />} />
             </Routes>
         </>
     )

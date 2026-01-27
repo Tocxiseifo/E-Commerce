@@ -1,6 +1,6 @@
 import './App.css'
 import NavBar from './components/Nav/NavBar'
-import { Context} from './Contexts/Context'
+import { Context } from './Contexts/Context'
 import { useState } from 'react'
 import AppRoutes from './routes/AppRoutes'
 import type { Product } from './types/prodects'
@@ -28,7 +28,7 @@ function App() {
   
   return (
     <>
-      <div className="w-full font-semibold h-screen bg-background">
+      <div className="w-full font-semibold h-full bg-background">
         <Context.Provider value={{ favorite, setFavorite , cart , setCart , isLoggedIn, setIsLoggedIn}}>
           <NavBar />
           <AppRoutes />

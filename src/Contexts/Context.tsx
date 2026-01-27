@@ -1,4 +1,6 @@
 import { createContext } from "react";
+
+//=====================Types====================
 import type { Product } from "../types/prodects";
 
 export interface ShopContextType {

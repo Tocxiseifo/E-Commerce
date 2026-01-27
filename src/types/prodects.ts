@@ -1,4 +1,5 @@
 export interface Product {
+  rating: any;
   id: number | string;
   title: string;
   price: number | string;

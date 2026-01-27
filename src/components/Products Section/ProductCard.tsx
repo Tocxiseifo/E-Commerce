@@ -1,3 +1,4 @@
+//=====================Hooks====================
 import useProducts from "../../hooks/useProducts";
 import useShop from "../../hooks/useShop";
 
@@ -8,6 +9,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 
 //=====================Types============
 import type { Product } from "../../types/prodects";
+
+//=====================Router=====================
 import { Link, useParams } from "react-router-dom";
 
 export default function ProductCard() {

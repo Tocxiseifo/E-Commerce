@@ -1,5 +1,3 @@
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-
 //======================Hooks=================
 import useShop from '../../hooks/useShop';
 import { useEffect } from 'react';
@@ -8,6 +6,7 @@ import { useEffect } from 'react';
 import Badge, { badgeClasses } from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 //=====================Router=====================
 import { Link } from 'react-router-dom';
@@ -46,19 +45,19 @@ export default function NavBar() {
                         <span className="text-[16px] text-text-color relative xl:top-2 hover:text-main cursor-pointer duration-500 transition hover:duration-500">Support</span>
                     </div>
                     <div className="flex flex-row text-center gap-4 mr-12 justify-center items-center">
+                        <button className='text-gray-700 hover:text-main-color cursor-pointer'>
+                            <FavoriteBorderIcon  />
+                            <CartBadge badgeContent={favorite.length}  color="primary" overlap="circular" />
+                        </button>
+                        <Link to={'/Cart'} className='text-gray-700 hover:text-main-color cursor-pointer mr-4'>
+                            <ShoppingBagIcon  />
+                            <CartBadge badgeContent={cart.length}   color="primary" overlap="circular" /> {/*add .length to solve the error */}
+                        </Link>                                           
                         {isLoggedIn ? (
                             <button onClick={() => setIsLoggedIn(false)} className="cursor-pointer text-[16px] text-main bg-transparent duration-500 transition hover:duration-500 hover:bg-gray-200 hover:text-main hover:border-main border  w-18 h-9 text-center flex justify-center items-center rounded-md">LogOut</button>
                         ) : (
                             <Link to={'/LogIn'} className="cursor-pointer text-[16px] text-white bg-main duration-500 transition hover:duration-500 hover:bg-white hover:text-main hover:border-main border  w-18 h-9 text-center flex justify-center items-center rounded-md">LogIn</Link>
                         )}
-                        <button className='text-gray-700 hover:text-main-color cursor-pointer'>
-                            <FavoriteBorderIcon  />
-                            <CartBadge badgeContent={favorite.length}  color="primary" overlap="circular" />
-                        </button>
-                        <button className='text-gray-700 hover:text-main-color cursor-pointer'>
-                            <ShoppingBagIcon  />
-                            <CartBadge badgeContent={cart.length}   color="primary" overlap="circular" /> {/*add .length to solve the error */}
-                        </button>                                           
                     </div> 
                 </div>
             </nav>

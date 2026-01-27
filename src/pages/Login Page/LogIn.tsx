@@ -33,7 +33,7 @@ export default function LogIn() {
             alert('Please enter a valid email address.');
             return;
         }
-        if (password.length <= 6) {
+        if (password.length <= 5) {
             alert('Password must be at least 6 characters long.');
             return;
         }
@@ -53,13 +53,13 @@ export default function LogIn() {
                         {
                             showPassword === false  ? (
                                <>
-                                    <input value={password} onChange={e => setPassword(e.target.value)}  type="text" placeholder="Password" className="border border-gray-300 p-2 rounded-md w-67 focus:outline-none focus:ring-2 focus:ring-main" />
+                                    <input value={password} onChange={e => setPassword(e.target.value)}  type="password" placeholder="Password" className="border border-gray-300 p-2 rounded-md w-67 focus:outline-none focus:ring-2 focus:ring-main" />
                                     <VisibilityOffIcon className="absolute left-59 bottom-2.5 cursor-pointer" onClick={() => setShowPassword(!showPassword)} />
                                </> 
                             ) : (
                                 <>
-                                    <input value={password} onChange={e => setPassword(e.target.value)}  type="password" placeholder="Password" className="border border-gray-300 p-2 rounded-md w-67 focus:outline-none focus:ring-2 focus:ring-main" />
-                                    <VisibilityIcon className="absolute left-59 bottom-2.5 cursor-pointer" onClick={() => setShowPassword(!showPassword)} />
+                                    <input value={password} onChange={e => setPassword(e.target.value)}  type="text" placeholder="Password" className="border border-gray-300 p-2 rounded-md w-67 focus:outline-none focus:ring-2 focus:ring-main" />
+                                    <VisibilityIcon  className="absolute left-59 bottom-2.5 cursor-pointer" onClick={() => setShowPassword(!showPassword)} />
                                 </>
                             )
                         }                
