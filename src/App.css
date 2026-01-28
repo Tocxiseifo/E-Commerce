@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @theme {
-    --color-main:oklch(93.21% 0.197 104.65);
+    --color-main: oklch(79.5% 0.184 86.047);
     --color-background:oklch(98.42% 0.003 247.86);
     --color-text-color:oklch(20.77% 0.040 265.75);
     --color-subtitles:oklch(55.44% 0.041 257.42);
@@ -9,3 +9,4 @@
 html{
     scroll-behavior: smooth;
 }
+/* oklch(93.21% 0.197 104.65) */

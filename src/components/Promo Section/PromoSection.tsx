@@ -1,3 +1,4 @@
+//===============Assets=================
 import Shopping from '../../assets/images/woman-with-shopping-bags.jpg';
 
 export default function PromoSection() {

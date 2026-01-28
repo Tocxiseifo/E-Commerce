@@ -12,6 +12,7 @@ export interface ShopContextType {
   setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
   quantity: number;
   setQuantity: React.Dispatch<React.SetStateAction<number>>;
+  Carts: Product[];
 }
 
 export const Context = createContext<ShopContextType | null>(null);

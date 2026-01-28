@@ -16,18 +16,18 @@ import { Link, useParams } from "react-router-dom";
 export default function ProductCard() {
     const {products, loading, error , products3} = useProducts() //Custom hook contain the data of the api
     const {favorite, setFavorite , cart , setCart} = useShop() //custom hook contain the context data
-    const {productId}  = useParams()
+    const {productId}  = useParams() //to get the product id from the url
 
-    
     console.log(productId);
     
+    //=====================Conditional Rendering==================
     if (loading) return <h1>Loading...</h1>
     if (error) return <h1>{error}</h1>
 
     //=====================Handlers==================
     function handleAddClick (Id :number | string) {
         if (favorite.some((itemId : Product) => itemId.id === Id)){
-            setFavorite((prev ) => prev.filter((itemId) => itemId.id !== Id));
+            setFavorite((prev) => prev.filter((itemId) => itemId.id !== Id));
         } else {
             const product = products.find((product) => product.id === Id);
             if(!product) return

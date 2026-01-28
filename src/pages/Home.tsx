@@ -1,4 +1,3 @@
-// src/pages/Home.tsx
 // ====================Components===================
 import HeroSection from "../components/Hero/HeroSection";
 import ProductSection from "../components/Products Section/ProductSection";

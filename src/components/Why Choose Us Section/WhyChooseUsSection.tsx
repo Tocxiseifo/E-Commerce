@@ -4,6 +4,7 @@ import ReplayIcon from '@mui/icons-material/Replay';
 import ShieldIcon from '@mui/icons-material/Shield';
 import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
 
+//======================Data======================
 const features = [
     {
         id:0,
@@ -34,7 +35,7 @@ const features = [
 export default function WhyChooseUsSection() {
     return(
         <>
-            <section id="features-section" className="py-16 flex flex-row flex-wrap items-center justify-center  w-full mx-auto px-6">
+            <section id="features-section" className="py-16 flex flex-row flex-wrap items-center justify-center -mb-50 w-full mx-auto px-6">
                 <div className="flex flex-row flex-wrap gap-15 md:gap-7 w-full  text-center justify-center  ">
                     {features.map((feature) => (
                         <div key={feature.id} className='flex flex-col md:w-80   items-center justify-evenly text-center'>

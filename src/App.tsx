@@ -17,7 +17,9 @@ function App() {
 
   const [cart, setCart] = useState<Product[]>(() => {
     const storedCart = localStorage.getItem("cart");
-    return storedCart ? JSON.parse(storedCart) : [];
+    if (!storedCart) return [];
+    const parsed = JSON.parse(storedCart);
+    return parsed.map((item: Product) => ({ ...item, quantity: item.quantity ?? 1 })); // Ensure quantity property by using nullish coalescing operator
   });
 
   const [quantity , setQuantity] = useState<number>(1);
@@ -26,11 +28,14 @@ function App() {
     const storedLogin = localStorage.getItem("isLoggedIn");
     return storedLogin ? JSON.parse(storedLogin) : false;
   });
+
+  //=====================Derived State==================
+  const Carts = cart.map((item) => ({...item , quantity:1}));
   
   return (
     <>
       <div className="w-full font-semibold h-full bg-background">
-        <Context.Provider value={{ favorite, setFavorite , cart , setCart , isLoggedIn, setIsLoggedIn , quantity , setQuantity}}>
+        <Context.Provider value={{ favorite, setFavorite , cart ,Carts , setCart , isLoggedIn, setIsLoggedIn , quantity , setQuantity}}>
           <NavBar />
           <AppRoutes />
           <FooterSection />

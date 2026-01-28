@@ -22,6 +22,8 @@ export default function NavBar() {
     `;
     
     const {favorite, cart , setIsLoggedIn , isLoggedIn} = useShop(); //custom hook contain the context data
+    
+    //=====================Effects + Storage Data==================
     useEffect(() =>{
         localStorage.setItem('favoriteItems', JSON.stringify(favorite));
     }, [favorite])
@@ -33,6 +35,7 @@ export default function NavBar() {
     useEffect(() =>{
         localStorage.setItem('isLoggedIn', JSON.stringify(isLoggedIn));
     },[isLoggedIn])
+    
     return(
         <>
             <nav className="bg-white text-text-color flex flex-row justify-between items-center text-center  w-full h-18 sticky top-0 z-50">

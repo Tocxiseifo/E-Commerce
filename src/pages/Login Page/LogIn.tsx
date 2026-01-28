@@ -24,20 +24,26 @@ export default function LogIn() {
     //=====================Handlers==================
     function handleLoginSubmit(e: React.FormEvent<HTMLFormElement> ) { // Form submit handler
         e.preventDefault();
-        // After successful login, navigate to the home page
+        //=====================Validation==================
         if (email  == '' && password == '' ) {
             alert('Please enter both email and password.');
             
         }
+
+        //=====================Simple Email Validation==================
         if (!email.includes('@') || !email.includes('.')) {
             alert('Please enter a valid email address.');
             return;
         }
+
+        //=====================Simple Password Validation==================
         if (password.length <= 5) {
             alert('Password must be at least 6 characters long.');
             return;
         }
+        // If validation passes
         else{
+            // After successful login, navigate to the home page
             navigate('/'); // Redirect to home page after login
             setIsLoggedIn(true);
             return;
