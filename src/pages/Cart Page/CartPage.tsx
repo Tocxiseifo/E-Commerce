@@ -46,12 +46,12 @@ export default function CartPage() {
     }, []); // Just once on initial mount    
     return(
         <>
-            <section className="flex flex-col h-full w-full  bg-background pt-10">
+            <motion.section initial={{opacity:0 , y:100}} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{duration:1 , ease:'easeOut' ,delay:0.2}} className="flex flex-col h-screen pt-10">
                 <div className="flex flex-row w-full h-screen ">
                     <div className="flex-col w-1/2 h-full mb-10 p-10">
-                        <div className="flex flex-col h-full w-full  items-center">
-                            {Carts.map((item) => (
-                                <div key={item.id} className="flex flex-row gap-4   border-b pb-4 mb-14 w-full">
+                        <div className="flex flex-col h-180 overflow-y-scroll  w-full  items-center">
+                            {Carts.map((item,index) => (
+                                <motion.div initial={{opacity:0 , y:100}} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0 }} transition={{duration:1 , ease:'easeOut' ,delay:index *0.5}} key={item.id} className="flex flex-row gap-4   border-b pb-4 mb-14 w-full">
                                     <div className="flex justify-center items-center bg-white w-45 h-45 rounded-md shadow-md">
                                         <img src={item.image} alt={item.title} className="w-33 h-33 object-contain" />
                                     </div>
@@ -60,7 +60,7 @@ export default function CartPage() {
                                         <p className="text-subtitles text-lg ">${item.price}</p>
                                         <div className="text-text-color mb-2">
                                             Quantity:
-                                            <button className="ml-2 w-16 border border-gray-300 rounded-md p-1 hover:bg-gray-200 duration-500 transition hover:duration-500 cursor-pointer" disabled={item.quantity <= 1} onClick={() => handleDecreaseClick(item.id)}>    
+                                        <button className={item.quantity === 1 ?"ml-2 w-16 border bg-gray-400 border-gray-400 rounded-md p-1 hover:bg-gray-400 duration-500 transition hover:duration-500 cursor-no-drop" :"ml-2 w-16 border border-gray-300 rounded-md p-1 hover:bg-gray-200 duration-500 transition hover:duration-500 cursor-pointer"} disabled={item.quantity <= 1} onClick={() => handleDecreaseClick(item.id)}>    
                                                 -
                                             </button>
                                             <span className="mx-2">{item.quantity === 0 ? 1 : item.quantity}</span>  
@@ -78,7 +78,7 @@ export default function CartPage() {
                                         <button className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition-colors cursor-pointer" onClick={() => handleDeleteClick(item.id)}>Remove</button>
                                     </div>
                                     
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
                     </div>
@@ -86,7 +86,7 @@ export default function CartPage() {
                         <CartProductCalculation />
                     </div>
                 </div>
-            </section>
+            </motion.section>
         </>
     )
 }

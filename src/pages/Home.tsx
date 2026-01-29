@@ -1,5 +1,4 @@
 // ====================Components===================
-import FooterSection from "../components/Footer/FooterSection";
 import HeroSection from "../components/Hero/HeroSection";
 import ProductSection from "../components/Products Section/ProductSection";
 import PromoSection from "../components/Promo Section/PromoSection";
@@ -12,7 +11,6 @@ export default function Home () {
             <ProductSection />
             <PromoSection />
             <WhyChooseUsSection />
-            <FooterSection />
         </>
     )
 }

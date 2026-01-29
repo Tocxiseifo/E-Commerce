@@ -4,6 +4,7 @@ import { Context } from './Contexts/Context'
 import { useState } from 'react'
 import AppRoutes from './routes/AppRoutes'
 import type { Product } from './types/prodects'
+import FooterSection from './components/Footer/FooterSection'
 
 
 
@@ -35,10 +36,11 @@ function App() {
   
   return (
     <>
-      <div className="w-full font-semibold h-full bg-background">
+      <div className="w-full font-semibold h-412.5  bg-background">
         <Context.Provider value={{ favorite, setFavorite , cart ,Carts , setCart , isLoggedIn, setIsLoggedIn , quantity , setQuantity}}>
           <NavBar />
-          <AppRoutes />
+          {/* <AppRoutes />
+          <FooterSection /> */}
         </Context.Provider>
       </div>
     </>

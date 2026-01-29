@@ -38,7 +38,7 @@ const features = [
 export default function WhyChooseUsSection() {
     return(
         <>
-            <section id="features-section" className="py-16 flex flex-row flex-wrap items-center justify-center -mb-50 w-full mx-auto px-6">
+            <section id="features-section" className="py-16 flex flex-row flex-wrap items-center justify-center mb-20  w-full mx-auto px-6">
                 <div className="flex flex-row flex-wrap gap-15 md:gap-7 w-full  text-center justify-center  ">
                     {features.map((feature , index) => (
                         <motion.div key={feature.id} initial={{opacity:0 , x:-100}} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{duration:1 , ease:'easeOut' ,delay:index * 0.8}} className='flex flex-col md:w-80   items-center justify-evenly text-center'>

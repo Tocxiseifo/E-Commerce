@@ -4,6 +4,8 @@ import useShop from "../../hooks/useShop";
 //==================Router=================
 import { Link } from "react-router-dom";
 
+//==================Motion=================
+import { motion } from "framer-motion";
 
 export default function CartProductCalculation() {
     //=====================Hook==================
@@ -11,7 +13,7 @@ export default function CartProductCalculation() {
     console.log(Carts);
     return(
         <>
-            <section className="w-120 h-120 xl:ml-65 bg-white rounded-md shadow-md p-6 sticky top-32">
+            <motion.section initial={{opacity:0 , y:-100}} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{duration:1 , ease:'easeOut' ,delay:0.6}} className="w-120 h-120 xl:ml-65 bg-white rounded-md shadow-md p-6    ">
                 <div className="flex flex-col justify-between w-full h-full">
                     <div className="flex flex-col gap-3">
                         <h2 className="text-2xl font-bold text-text-color mb-4">Order Summary</h2>
@@ -32,7 +34,7 @@ export default function CartProductCalculation() {
                         Proceed to Checkout
                     </Link>
                 </div>
-            </section>
+            </motion.section>
         </>
     )
 }
