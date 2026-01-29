@@ -11,7 +11,7 @@ export default function CartProductCalculation() {
     console.log(Carts);
     return(
         <>
-            <section className="w-120 h-120 xl:ml-65 bg-white rounded-md shadow-md p-6">
+            <section className="w-120 h-120 xl:ml-65 bg-white rounded-md shadow-md p-6 sticky top-32">
                 <div className="flex flex-col justify-between w-full h-full">
                     <div className="flex flex-col gap-3">
                         <h2 className="text-2xl font-bold text-text-color mb-4">Order Summary</h2>

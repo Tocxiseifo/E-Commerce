@@ -4,6 +4,9 @@ import ReplayIcon from '@mui/icons-material/Replay';
 import ShieldIcon from '@mui/icons-material/Shield';
 import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
 
+//======================Motion=====================
+import { motion } from 'framer-motion';
+
 //======================Data======================
 const features = [
     {
@@ -37,8 +40,8 @@ export default function WhyChooseUsSection() {
         <>
             <section id="features-section" className="py-16 flex flex-row flex-wrap items-center justify-center -mb-50 w-full mx-auto px-6">
                 <div className="flex flex-row flex-wrap gap-15 md:gap-7 w-full  text-center justify-center  ">
-                    {features.map((feature) => (
-                        <div key={feature.id} className='flex flex-col md:w-80   items-center justify-evenly text-center'>
+                    {features.map((feature , index) => (
+                        <motion.div key={feature.id} initial={{opacity:0 , x:-100}} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{duration:1 , ease:'easeOut' ,delay:index * 0.8}} className='flex flex-col md:w-80   items-center justify-evenly text-center'>
                             <div  className="w-16 h-16 bg-gray-50 rounded-full flex flex-col gap-2 items-center justify-center mx-auto mb-4 text-center">
                                 <i className='text-main text-2xl text-center flex items-center justify-center'>
                                     {feature.img}
@@ -46,7 +49,7 @@ export default function WhyChooseUsSection() {
                             </div>
                             <h3 className='font-semibold text-main-color mb-2'>{feature.description}</h3>
                             <p className='text-subtitles w-100'>{feature.p}</p>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </section>

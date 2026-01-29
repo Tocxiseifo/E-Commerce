@@ -10,11 +10,14 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 //=====================Types============
 import type { Product } from "../../types/prodects";
 
+//=====================Motion=====================
+import { motion } from "framer-motion";
+
 //=====================Router=====================
 import { Link, useParams } from "react-router-dom";
 
 export default function ProductCard() {
-    const {products, loading, error , products3} = useProducts() //Custom hook contain the data of the api
+    const {products, loading, error} = useProducts() //Custom hook contain the data of the api
     const {favorite, setFavorite , cart , setCart} = useShop() //custom hook contain the context data
     const {productId}  = useParams() //to get the product id from the url
 
@@ -47,15 +50,15 @@ export default function ProductCard() {
     }
 
     return(
-        <div className="w-full h-210 bg-white justify-center mt-120 ">
+        <section className="w-full h-210 bg-white justify-center mt-120 ">
                 <div className="flex flex-col items-center  mt-10">
                     <h1 className="text-3xl font-bold text-text-color">Most Popular Products</h1>
                     <p className="text-subtitles">Discover our most popular products</p>
                 </div>
             <div className="flex flex-row flex-wrap  justify-center items-center gap-41">
-                {products3.map((product) =>{
+                {products.slice(0,4).map((product ,index) =>{
                     return(
-                            <div key={product.id} className="flex  flex-col mb-6   h-150 w-60 text-left group  mt-40 ">
+                            <motion.div initial={{opacity:0 , x:-100}} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{duration:1 , ease:'easeOut' ,delay:index * 0.4}} key={product.id} className="flex  flex-col mb-6   h-150 w-60 text-left group  mt-40 ">
                                 <div className="items-center hover:shadow-lg hover:-translate-y-1 duration-500 transition hover:duration-500   gap-2 bg-gray-50 h-70 w-65 flex mb-3 rounded-md justify-center cursor-pointer relative ">
                                     <img src={product.image} alt={product.title} loading="lazy" className="w-45 h-45 object-contain  duration-500 transition-all hover:scale-110 hover:duration-500" />
                                     <button onClick={(e) =>{
@@ -80,11 +83,10 @@ export default function ProductCard() {
                                     <Link to={`/product/${product.id}`} className="bg-main text-center flex justify-center items-center  w-25 h-10 rounded-md hover:bg-yellow-600 duration-500 transition hover:duration-500 cursor-pointer">View</Link> 
                                     {/* link to product details page */}
                                 </div>
-                            </div>
+                            </motion.div>
                     )
                 })}
             </div>
-            
-        </div>
+        </section>
     )
 }

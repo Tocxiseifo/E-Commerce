@@ -5,6 +5,9 @@ import useShop from "../../hooks/useShop"
 //===============Components=================
 import CartProductCalculation from "./CartProductCalculation";
 
+//=====================Motion=====================
+import { motion } from "framer-motion";
+
 export default function CartPage() {
     //=====================Hook==================
     const {cart ,  setCart} = useShop() //custom hook contain the context data
@@ -43,7 +46,7 @@ export default function CartPage() {
     }, []); // Just once on initial mount    
     return(
         <>
-            <section className="flex flex-col h-full w-full">
+            <section className="flex flex-col h-full w-full  bg-background pt-10">
                 <div className="flex flex-row w-full h-screen ">
                     <div className="flex-col w-1/2 h-full mb-10 p-10">
                         <div className="flex flex-col h-full w-full  items-center">

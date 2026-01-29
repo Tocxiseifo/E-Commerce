@@ -8,6 +8,7 @@ import  LogIn from "../pages/Login Page/LogIn";
 import ProductDetails from "../pages/Product Details Page/ProductDetails";
 import CartPage from "../pages/Cart Page/CartPage";
 import OrderSuccess from "../pages/Order Success Page/OrderSuccess";
+import NewArrival from "../pages/New Arrival Page/NewArrival";
 
 export default function AppRoutes() {
     return(
@@ -19,6 +20,7 @@ export default function AppRoutes() {
                 <Route path="Login" element={<LogIn />} />
                 <Route path="Cart" element={<CartPage />} />
                 <Route path="OrderSuccess" element={<OrderSuccess />} />
+                <Route path="NewArrival" element={<NewArrival />} />
             </Routes>
         </>
     )
