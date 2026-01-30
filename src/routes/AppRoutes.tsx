@@ -9,6 +9,7 @@ import ProductDetails from "../pages/Product Details Page/ProductDetails";
 import CartPage from "../pages/Cart Page/CartPage";
 import OrderSuccess from "../pages/Order Success Page/OrderSuccess";
 import NewArrival from "../pages/New Arrival Page/NewArrival";
+import Favorite from "../pages/Faveroite Cart Page/Faveroite";
 
 export default function AppRoutes() {
     return(
@@ -21,6 +22,7 @@ export default function AppRoutes() {
                 <Route path="Cart" element={<CartPage />} />
                 <Route path="OrderSuccess" element={<OrderSuccess />} />
                 <Route path="NewArrival" element={<NewArrival />} />
+                <Route path="Favorite" element={<Favorite />} />
             </Routes>
         </>
     )

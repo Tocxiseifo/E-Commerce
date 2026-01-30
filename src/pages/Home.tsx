@@ -6,11 +6,11 @@ import WhyChooseUsSection from "../components/Why Choose Us Section/WhyChooseUsS
 
 export default function Home () {
     return(
-        <>
+        <div >
             <HeroSection />
             <ProductSection />
             <PromoSection />
             <WhyChooseUsSection />
-        </>
+        </div>
     )
 }

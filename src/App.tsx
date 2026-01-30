@@ -36,11 +36,11 @@ function App() {
   
   return (
     <>
-      <div className="w-full font-semibold h-412.5  bg-background">
+      <div className="w-full font-semibold h-fit  bg-background">
         <Context.Provider value={{ favorite, setFavorite , cart ,Carts , setCart , isLoggedIn, setIsLoggedIn , quantity , setQuantity}}>
           <NavBar />
-          {/* <AppRoutes />
-          <FooterSection /> */}
+          <AppRoutes />
+          <FooterSection />
         </Context.Provider>
       </div>
     </>

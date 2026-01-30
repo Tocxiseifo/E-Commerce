@@ -46,10 +46,10 @@ export default function CartPage() {
     }, []); // Just once on initial mount    
     return(
         <>
-            <motion.section initial={{opacity:0 , y:100}} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{duration:1 , ease:'easeOut' ,delay:0.2}} className="flex flex-col h-screen pt-10">
-                <div className="flex flex-row w-full h-screen ">
+            <motion.section initial={{opacity:0 , y:100}} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{duration:1 , ease:'easeOut' ,delay:0.2}} className="flex flex-col h-fit  pt-10">
+                <div className="flex flex-row w-full h-fit ">
                     <div className="flex-col w-1/2 h-full mb-10 p-10">
-                        <div className="flex flex-col h-180 overflow-y-scroll  w-full  items-center">
+                        <div className="flex flex-col h-fit   w-full  items-center">
                             {Carts.map((item,index) => (
                                 <motion.div initial={{opacity:0 , y:100}} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0 }} transition={{duration:1 , ease:'easeOut' ,delay:index *0.5}} key={item.id} className="flex flex-row gap-4   border-b pb-4 mb-14 w-full">
                                     <div className="flex justify-center items-center bg-white w-45 h-45 rounded-md shadow-md">

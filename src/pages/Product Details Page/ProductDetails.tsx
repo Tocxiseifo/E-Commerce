@@ -49,7 +49,7 @@ export default function ProductDetails() {
 
     return(
         <>
-            <section className="flex flex-col h-screen w-full">
+            <section className="flex flex-col h-fit w-full">
                 {/* Product Details Section */}
                 {products.filter(product => product.id === Number(productId)).map((product) => (
                     <div className="flex flex-row items-center w-full h-180 mt-10 gap-10 " key={product.id}>
@@ -66,7 +66,7 @@ export default function ProductDetails() {
                                 )}
                             </button> 
                         </div>
-                        <div className="flex flex-col ml-10 gap-6 w-160 h-170 justify-between ">
+                        <div className="flex flex-col ml-1 gap-6 w-160 h-170 justify-between ">
                             <div className="flex flex-col gap-4">
                                 <h1 className="text-3xl font-bold text-text-color">{product.title}</h1>
                                 <p className="text-subtitles">{product.description}</p>
@@ -78,7 +78,7 @@ export default function ProductDetails() {
                             </div>
                             <div className="flex flex-col gap-4">
                                 <span className="text-2xl font-semibold text-text-color">${product.price}</span>
-                                <button className="bg-main text-white py-2 rounded-md hover:bg-main-color transition duration-300 cursor-pointer hover:duration-300 hover:bg-yellow-600" onClick={() => handleAddToCart(product.id)}>Add to cart</button>   
+                                <button className="bg-main text-white py-2 mr-10 rounded-md hover:bg-main-color transition duration-300 cursor-pointer hover:duration-300 hover:bg-yellow-600" onClick={() => handleAddToCart(product.id)}>Add to cart</button>   
                             </div>
                         </div>
                     </div>    

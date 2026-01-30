@@ -38,21 +38,79 @@ const features = [
 export default function WhyChooseUsSection() {
     return(
         <>
-            <section id="features-section" className="py-16 flex flex-row flex-wrap items-center justify-center mb-20  w-full mx-auto px-6">
-                <div className="flex flex-row flex-wrap gap-15 md:gap-7 w-full  text-center justify-center  ">
-                    {features.map((feature , index) => (
-                        <motion.div key={feature.id} initial={{opacity:0 , x:-100}} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{duration:1 , ease:'easeOut' ,delay:index * 0.8}} className='flex flex-col md:w-80   items-center justify-evenly text-center'>
-                            <div  className="w-16 h-16 bg-gray-50 rounded-full flex flex-col gap-2 items-center justify-center mx-auto mb-4 text-center">
-                                <i className='text-main text-2xl text-center flex items-center justify-center'>
-                                    {feature.img}
-                                </i>
-                            </div>
-                            <h3 className='font-semibold text-main-color mb-2'>{feature.description}</h3>
-                            <p className='text-subtitles w-100'>{feature.p}</p>
-                        </motion.div>
-                    ))}
-                </div>
-            </section>
+            <section
+            id="features-section"
+            className="
+              py-16
+              flex
+              justify-center
+              items-center
+              mb-20
+              w-full
+              px-4
+              relative 
+              top-390
+              lg:top-0
+            "
+            >
+            <div
+              className="
+                flex
+                flex-wrap
+                justify-center
+                gap-8
+                max-w-7xl
+                w-full
+                text-center
+              "
+            >
+            {features.map((feature, index) => (
+              <motion.div
+                key={feature.id}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8, ease: 'easeOut', delay: index * 0.2 }}
+                className="
+                  flex
+                  flex-col
+                  items-center
+                  justify-start
+                  text-center
+                  w-full
+                  sm:w-64
+                  lg:w-72
+                "
+              >
+              <div
+                className="
+                  w-16
+                  h-16
+                  bg-gray-50
+                  rounded-full
+                  flex
+                  items-center
+                  justify-center
+                  mb-4
+                "
+              >
+                <i className="text-main text-2xl">
+                  {feature.img}
+                </i>
+              </div>
+
+              <h3 className="font-semibold text-main-color mb-2">
+                {feature.description}
+              </h3>
+
+              <p className="text-subtitles max-w-xs">
+                {feature.p}
+              </p>
+            </motion.div>
+      ))}
+        </div>
+    </section>
+ 
         </>
     )
 }
