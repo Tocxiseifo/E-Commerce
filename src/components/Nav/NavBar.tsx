@@ -112,7 +112,7 @@ export default function NavBar() {
             <MenuIcon onClick={handleDrawerClose} className='mr-3' />
           </div>
         <Divider />
-          <div className="flex flex-col mb-3 -ml-4 w-full gap-4  mt-3 text-start" >
+          <div className="flex flex-col mb-3 ml-4 w-full gap-4  mt-3 text-start" >
             <Link to={'/NewArrival'} className="text-[16px] text-text-color relative xl:top-2 hover:text-main cursor-pointer duration-500 transition hover:duration-500">New arrival</Link>
             <a href='#Most-popular' className="text-[16px] text-text-color relative xl:top-2 hover:text-main cursor-pointer duration-500 transition hover:duration-500">Most popular</a>
             <span className="text-[16px] text-text-color relative xl:top-2 hover:text-main cursor-pointer duration-500 transition hover:duration-500">About</span>
