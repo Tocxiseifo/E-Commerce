@@ -7,7 +7,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 export default function FooterSection() {
     return(
         <>
-            <footer id="Support" className="bg-gray-800 h-250  md:h-140 w-full lg:h-100 overflow-hidden  text-white pt-16 pb-8 relative top-390 lg:top-0">
+            <footer id="Support" className="bg-gray-800 h-fit  md:h-140 w-full lg:h-100 overflow-hidden  text-white pt-16 pb-8 relative top-390 lg:top-0">
                <div className="mx-auto px-6 flex flex-col ">
                     <div className="flex flex-row flex-wrap gap-5 lg:gap-10 w-79 md:w-170 lg:w-240 xl:w-full items-center justify-evenly mb-12">
                         <div className="flex flex-col gap-2 relative right-12 md:right-6">
