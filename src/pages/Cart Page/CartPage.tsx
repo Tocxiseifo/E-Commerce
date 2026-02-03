@@ -46,21 +46,21 @@ export default function CartPage() {
     }, []); // Just once on initial mount    
     return(
         <>
-            <motion.section initial={{opacity:0 , y:100}} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{duration:1 , ease:'easeOut' ,delay:0.2}} className="flex flex-col h-fit  pt-10">
-                <div className="flex flex-row w-full h-fit ">
-                    <div className="flex-col w-1/2 h-full mb-10 p-10">
+            <motion.section initial={{opacity:0 , y:100}} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0 }} transition={{duration:1 , ease:'easeOut' ,delay:0.2}} className="flex  w-full flex-col lg:h-fit  pt-10">
+                <div className="flex flex-col lg:flex-row w-full h-fit ">
+                    <div className="flex-col w-full lg:w-1/2 h-full mb-10 p-4 lg:p-10">
                         <div className="flex flex-col h-fit   w-full  items-center">
                             {Carts.map((item,index) => (
-                                <motion.div initial={{opacity:0 , y:100}} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0 }} transition={{duration:1 , ease:'easeOut' ,delay:index *0.5}} key={item.id} className="flex flex-row gap-4   border-b pb-4 mb-14 w-full">
-                                    <div className="flex justify-center items-center bg-white w-45 h-45 rounded-md shadow-md">
-                                        <img src={item.image} alt={item.title} className="w-33 h-33 object-contain" />
+                                <motion.div initial={{opacity:0 , y:100}} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0 }} transition={{duration:1 , ease:'easeOut' ,delay:index *0.5}} key={item.id} className="flex flex-col md:flex-row gap-4   border-b pb-4 mb-14 w-full items-center md:items-start">
+                                    <div className="flex justify-center items-center bg-white w-24 h-24 md:w-45 md:h-45 rounded-md shadow-md">
+                                        <img src={item.image} alt={item.title} className="w-20 h-20 md:w-33 md:h-33 object-contain" />
                                     </div>
                                     <div className="flex flex-col gap-2">
-                                        <h2 className="text-2xl font-bold text-text-color">{item.title}</h2>
-                                        <p className="text-subtitles text-lg ">${item.price}</p>
-                                        <div className="text-text-color mb-2">
+                                        <h2 className="text-lg md:text-2xl font-bold text-text-color text-center md:text-left">{item.title}</h2>
+                                        <p className="text-subtitles text-base md:text-lg">${item.price}</p>
+                                        <div className="text-text-color mb-2 flex items-center flex-wrap">
                                             Quantity:
-                                        <button className={item.quantity === 1 ?"ml-2 w-16 border bg-gray-400 border-gray-400 rounded-md p-1 hover:bg-gray-400 duration-500 transition hover:duration-500 cursor-no-drop" :"ml-2 w-16 border border-gray-300 rounded-md p-1 hover:bg-gray-200 duration-500 transition hover:duration-500 cursor-pointer"} disabled={item.quantity <= 1} onClick={() => handleDecreaseClick(item.id)}>    
+                                        <button className={item.quantity === 1 ?"ml-2 w-12 md:w-16 border bg-gray-400 border-gray-400 rounded-md p-1 hover:bg-gray-400 duration-500 transition hover:duration-500 cursor-no-drop" :"ml-2 w-12 md:w-16 border border-gray-300 rounded-md p-1 hover:bg-gray-200 duration-500 transition hover:duration-500 cursor-pointer"} disabled={item.quantity <= 1} onClick={() => handleDecreaseClick(item.id)}>    
                                                 -
                                             </button>
                                             <span className="mx-2">{item.quantity === 0 ? 1 : item.quantity}</span>  
@@ -68,13 +68,13 @@ export default function CartPage() {
                                                 id="quantity"
                                                 name="quantity"
                                                 onClick={() => handleIncreaseClick(item.id)}
-                                                className="ml-2 w-16 border border-gray-300 rounded-md p-1 hover:bg-gray-200 duration-500 transition hover:duration-500 cursor-pointer"
+                                                className="ml-2 w-12 md:w-16 border border-gray-300 rounded-md p-1 hover:bg-gray-200 duration-500 transition hover:duration-500 cursor-pointer"
                                             >
                                                 +
                                             </button>
                                         </div>
                                     </div>
-                                    <div >
+                                    <div className="mt-4 md:mt-0 ml-auto md:ml-0">
                                         <button className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition-colors cursor-pointer" onClick={() => handleDeleteClick(item.id)}>Remove</button>
                                     </div>
                                     
@@ -82,7 +82,7 @@ export default function CartPage() {
                             ))}
                         </div>
                     </div>
-                    <div className="mt-8">
+                    <div className="mt-8 lg:mt-0 lg:ml-8 lg:w-1/3 w-full">
                         <CartProductCalculation />
                     </div>
                 </div>

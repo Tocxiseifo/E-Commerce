@@ -55,7 +55,7 @@ export default function LogIn() {
     }    
     return(
         <>
-            <motion.div initial={{opacity:0 , y:-100}} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{duration:1 , ease:'easeOut' ,delay:0.5}} className="flex justify-center items-center w-full h-screen">
+            <motion.div initial={{opacity:0 , y:-100}} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{duration:1 , ease:'easeOut' ,delay:0.5}} className="flex justify-center items-center w-full h-screen overflow-hidden">
                 <form className="flex flex-col gap-6 bg-white p-15 rounded-lg shadow-lg w-96" onSubmit={handleLoginSubmit}>
                     <h2 className="text-2xl font-bold text-text-color mb-4 text-center">Log In to Your Account</h2>
                     <input value={email} onChange={e => setEmail(e.target.value)}  type="email" placeholder="XXXXXXXXX@gmail.com" className={email !== `${email}@gmail.com` ? "border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-main" : "border border-red-600 p-2 bg-red-50 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600"} />

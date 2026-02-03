@@ -48,17 +48,17 @@ export default function Favorite() {
 
     return(
         <>
-            <section className="flex flex-row  justify-center  items-start gap-41 flex-wrap w-full mb-12 h-fit">
+            <section className="flex flex-row  justify-center  items-start gap-41 flex-wrap w-full lg:mb-38 h-fit">
                 {favorite.map((item) => (
                     <div className="flex flex-row gap-4   pb-4 mb-14 relative" key={item.id}>
                         <div className="h-65 w-65 flex flex-col ml-5">
-                            <div className="flex bg-white flex-col justify-center items-center w-45 h-45 relative group">
-                                <div className="items-center hover:shadow-lg hover:-translate-y-1 duration-500 transition hover:duration-500   gap-2 bg-background h-70 w-65 flex mb-3 rounded-md justify-center cursor-pointer relative lg:w-55 lg:h-65 ">
-                                <img src={item.image} alt={item.title} loading="lazy" className="w-45 h-45 lg:h-35 lg:w-35 object-contain  duration-500 transition-all hover:scale-110 hover:duration-500" />
+                            <div className="flex  flex-col justify-center items-center w-45 h-45 relative ">
+                                <div className="items-center hover:shadow-lg hover:-translate-y-1 duration-500 transition hover:duration-500   gap-2 bg-background h-70 w-65 flex mb-3 rounded-md justify-center cursor-pointer relative lg:w-55 lg:h-65 group">
+                                <img src={item.image} alt={item.title} loading="lazy" className="w-25 h-25 lg:h-35 lg:w-35 object-contain flex justify-center   duration-500 transition-all hover:scale-110 hover:duration-500" />
                                 <button onClick={(e) =>{
                                     e.stopPropagation()
                                     handleAddClick(item.id)
-                                    }}  className="absolute top-4 right-4 w-10 h-10 bg-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition shadow-lg cursor-pointer">
+                                    }}  className=" absolute top-4 right-4 w-10 h-10 bg-red rounded-full flex items-center justify-center opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition shadow-lg cursor-pointer">
                                     {favorite.some(item => item.id === item.id)? (
                                       <FavoriteIcon className="text-red-600" />
                                     ) : (

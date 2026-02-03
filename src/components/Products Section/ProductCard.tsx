@@ -63,7 +63,7 @@ export default function ProductCard() {
                                 <button onClick={(e) =>{
                                     e.stopPropagation()
                                     handleAddClick(product.id)
-                                    }}  className="absolute top-4 right-4 w-10 h-10 bg-red rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition shadow-lg cursor-pointer">
+                                    }}  className="absolute top-4 right-4 w-10 h-10 bg-red rounded-full flex items-center justify-center opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition shadow-lg cursor-pointer">
                                     {favorite.some(item => item.id === product.id)? (
                                       <FavoriteIcon className="text-red-600" />
                                     ) : (
