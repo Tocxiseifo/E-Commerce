@@ -50,6 +50,7 @@ export default function WhyChooseUsSection() {
               px-4
               relative 
               top-390
+              md:top-120
               lg:top-0
             "
             >
@@ -79,7 +80,8 @@ export default function WhyChooseUsSection() {
                   text-center
                   w-full
                   sm:w-64
-                  lg:w-72
+                  lg:w-82
+                  xl:w-72
                 "
               >
               <div

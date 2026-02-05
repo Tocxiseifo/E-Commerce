@@ -54,11 +54,11 @@ export default function ProductCard() {
                     <motion.h1 initial={{opacity:0 , y:-100}} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{duration:1 , ease:'easeOut' ,delay:0.4}} className="text-3xl text-center font-bold text-text-color">Most Popular Products</motion.h1>
                     <motion.p initial={{opacity:0 , y:100}} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{duration:1 , ease:'easeOut' ,delay:0.6}} className="text-subtitles">Discover our most popular products</motion.p>
                 </motion.div>
-            <div className="flex flex-row flex-wrap lg:flex-nowrap lg:w-300 xl:w-full overflow-hidden  justify-center items-center lg:gap-3 xl:gap-41">
+            <div className="flex flex-row flex-wrap lg:flex-nowrap lg:w-250 xl:w-full overflow-hidden  justify-center items-center lg:gap-13 lg:mr-20 md:gap-21  xl:gap-41">
                 {products.slice(0,4).map((product ,index) =>{
                     return(
                         <motion.div initial={{opacity:0 , x:-100}} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{duration:1 , ease:'easeOut' ,delay:index * 0.4}} key={product.id} className="flex  flex-col mb-6  h-90 lg:h-150 w-60   text-left group  mt-40  [@media(min-width:1024px)_and_(max-width:1440px)]:-mr-14   ">
-                            <div className="items-center hover:shadow-lg hover:-translate-y-1 duration-500 transition hover:duration-500   gap-2 bg-background h-70 w-65 flex mb-3 rounded-md justify-center cursor-pointer relative lg:w-55 lg:h-65 ">
+                            <div className="items-center hover:shadow-lg hover:-translate-y-1 duration-500 transition hover:duration-500   gap-2 bg-background h-70 w-65  flex mb-3 rounded-md justify-center cursor-pointer relative lg:w-55 lg:h-65 ">
                                 <img src={product.image} alt={product.title} loading="lazy" className="w-45 h-45 lg:h-35 lg:w-35 object-contain  duration-500 transition-all hover:scale-110 hover:duration-500" />
                                 <button onClick={(e) =>{
                                     e.stopPropagation()

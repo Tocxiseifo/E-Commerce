@@ -36,7 +36,7 @@ function App() {
   
   return (
     <>
-      <div className="w-full font-semibold h-fit  bg-background">
+      <div className="w-full font-semibold h-fit ">
         <Context.Provider value={{ favorite, setFavorite , cart ,Carts , setCart , isLoggedIn, setIsLoggedIn , quantity , setQuantity}}>
           <NavBar />
           <AppRoutes />

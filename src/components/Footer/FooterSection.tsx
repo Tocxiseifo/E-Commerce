@@ -7,9 +7,9 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 export default function FooterSection() {
     return(
         <>
-            <footer id="Support" className="bg-gray-800 h-250  md:h-140 w-full lg:h-100 overflow-hidden  text-white pt-16 pb-8 relative top-390 lg:top-0">
+            <footer id="Support" className="bg-gray-800 h-250  md:h-140 w-full lg:h-100 overflow-hidden  text-white pt-16 pb-8 relative top-390 md:top-120 lg:top-0">
                <div className="mx-auto px-6 flex flex-col ">
-                    <div className="flex flex-row flex-wrap gap-5 lg:gap-10 w-79 md:w-170 lg:w-240 xl:w-full items-center justify-evenly mb-12">
+                    <div className="flex flex-row flex-wrap gap-5 lg:gap-10 w-79 md:w-170 lg:w-240 xl:w-full relative lg:left-12 xl:left-0 items-center justify-evenly mb-12">
                         <div className="flex flex-col gap-2 relative right-12 md:right-6">
                             <h3 className="text-2xl font-bold mb-6 text-white">Shoply</h3>
                             <p className="text-gray-400 text-sm mb-4 w-55">Your destination for premium fashion and lifestyle products.</p>
@@ -62,9 +62,9 @@ export default function FooterSection() {
                         </div>          
                     </div>
                     <div className="border-t border-gray-700 pt-8 flex  justify-center ml-42 w-100 relative right-58 lg:right-40 xl:right-0 md:w-220 lg:w-280  items-center text-sm text-gray-400 [@media(min-width:2560px)]:w-550  [@media(min-width:2560px)]:right-0 [@media(min-width:2560px)]:left-10">
-                        <div className="flex flex-col lg:flex-row justify-between lg:justify-evenly xl:justify-between   xl:w-full items-center  relative lg:right-150 xl:right-0 ">
+                        <div className="flex flex-col lg:flex-row justify-between lg:justify-evenly xl:justify-between   xl:w-full items-center  relative lg:right-70 xl:right-0 ">
                             <p>© 2026 Shoply. All rights reserved.</p>
-                            <div className="flex space-x-6 relative xl:right-65">
+                            <div className="flex space-x-6 relative lg:left-100 xl:left-0 xl:right-65">
                                 <a href="#" className="hover:text-white transition">Privacy Policy</a>
                                 <a href="#" className="hover:text-white transition">Terms of Service</a>
                                 <a href="#" className="hover:text-white transition">Cookie Policy</a>
